@@ -1,0 +1,129 @@
+.app {
+	width: min(800px, 80vw);
+	margin: auto;
+}
+
+/* header */
+header {
+	text-align: center;
+}
+
+header h1 {
+	margin: 2rem 0 3.5rem;
+	display: inline-block;
+	position: relative;
+}
+header h1::after {
+	content: " ";
+	display: block;
+	width: 5rem;
+	height: 0.3rem;
+	background-color: var(--green);
+	position: absolute;
+	top: 100%;
+	left: calc(50% - 2.5rem);
+}
+
+/* Job container */
+.job__container {
+	color: var(--text-color);
+}
+
+/* button container */
+.button__container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+	padding: 0 2rem 2rem;
+}
+
+.button__container button {
+	font-size: 1.6rem;
+	font-weight: 700;
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: var(--text-color);
+	padding: 0;
+	height: 2.2rem;
+}
+
+.button__container button:hover,
+.button__container button.active {
+	color: var(--green);
+	border-bottom: 2px solid var(--green);
+}
+
+/* Job content */
+.job__content .title {
+	font-weight: 500;
+	font-size: 1.55rem;
+	margin: 0;
+}
+
+.job__content .company {
+	font-weight: 600;
+	width: fit-content;
+	padding: 0.5rem 0.8rem;
+	background-color: #c0bdbd;
+}
+
+.job__content .dates {
+	font-weight: 500;
+	font-size: 1.35rem;
+}
+
+/* Duty container */
+.duty__container {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.job__content .duty {
+	display: flex;
+	align-items: center;
+}
+
+.job__content .duty p {
+	margin: 0;
+}
+
+.job__content .duty .icon {
+	text-align: center;
+	padding: 2rem;
+}
+
+.job__content .duty .icon svg {
+	color: var(--green);
+}
+
+/* media query */
+@media screen and (min-width: 700px) {
+	.job__container {
+		display: flex;
+		gap: 5%;
+		width: 100%;
+	}
+
+	.job__content {
+		width: 70%;
+	}
+
+	.button__container {
+		flex-direction: column;
+		justify-content: start;
+		padding: 0;
+		width: 25%;
+		position: relative;
+	}
+
+	.button__container button:hover,
+	.button__container button.active {
+		width: 100%;
+		border: 0;
+		color: var(--green);
+		border-left: 2px solid var(--green);
+	}
+}
